@@ -1,1 +1,0 @@
-Repository di prova per il corso SSS2026, primo lab
