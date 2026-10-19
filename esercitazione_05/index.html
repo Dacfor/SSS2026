@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esplorazione e Scoperte Spaziali</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #0b0d17; color: #ffffff; margin: 0; padding: 20px; }
+        header { text-align: center; padding: 20px; background: #1c2237; border-radius: 8px; }
+        .container { max-width: 800px; margin: 20px auto; }
+        .card { background: #151a2c; padding: 15px; margin-bottom: 15px; border-left: 4px solid #4facfe; border-radius: 4px; }
+        .login-box { background: #1c2237; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        input { padding: 8px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        button { padding: 10px 15px; background: #4facfe; border: none; color: white; cursor: pointer; border-radius: 4px; margin-top: 10px; }
+        #secret-content { display: none; margin-top: 15px; padding: 15px; background: #1b4332; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🚀 Grandi Scoperte Spaziali</h1>
+        <p>Archivio storico delle missioni che hanno cambiato la nostra visione dell'universo</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h3>1995 - 51 Pegasi b</h3>
+            <p>Scoperto il primo esopianeta in orbita attorno a una stella simile al Sole, aprendo l'era della ricerca di mondi alieni.</p>
+        </div>
+        <div class="card">
+            <h3>2015 - Onde Gravitazionali (LIGO)</h3>
+            <p>Prima rilevazione diretta delle increspature dello spazio-tempo generate dalla fusione di due buchi neri, confermando la teoria di Einstein.</p>
+        </div>
+        <div class="card">
+            <h3>2022 - Prime immagini del James Webb (JWST)</h3>
+            <p>Il telescopio spaziale infrarosso cattura le galassie più antiche mai osservate e analizza la composizione atmosferica degli esopianeti.</p>
+        </div>
+
+        <!-- PLUS: Elemento dinamico con Login Form -->
+        <div class="login-box">
+            <h3>🔒 Accesso Area Riservata Astronauti (Plus)</h3>
+            <form id="loginForm" onsubmit="effettuaLogin(event)">
+                <label>Nome Utente (Inserisci qualsiasi nome):</label>
+                <input type="text" id="username" required placeholder="Es. Comandante Shepard">
+                <label>Password (Usa: <b>spazio2026</b>):</label>
+                <input type="password" id="password" required placeholder="Password">
+                <button type="submit">Accedi ai dati classificati</button>
+            </form>
+
+            <div id="secret-content">
+                <h4>✅ Accesso Autorizzato! Benvenuto/a <span id="user-display"></span></h4>
+                <p><b>Scoperta Classificata:</b> Rilevate tracce di vapore acqueo e possibili biofirme nella fascia abitabile del sistema TRAPPIST-1.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function effettuaLogin(event) {
+            event.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if(pass === 'spazio2026') {
+                document.getElementById('user-display').innerText = user;
+                document.getElementById('secret-content').style.display = 'block';
+                document.getElementById('loginForm').style.display = 'none';
+            } else {
+                alert('Password errata! Suggerimento: usa "spazio2026"');
+            }
+        }
+    </script>
+</body>
+</html>
